@@ -38,11 +38,21 @@ public class Register {
             default:
                 System.out.println("Choose a valid alternative");
         }
+
+        System.out.println("Wanna return to register?");
+        int continuar = keyboard.nextInt();
+
+        if(continuar==1){
+            Choice();
+        }
     }
+
+
 
     /** Instanciando*/
 
     Output output = new Output();
+
     public void BothRegister(){
 
         validaPrint = 1;
