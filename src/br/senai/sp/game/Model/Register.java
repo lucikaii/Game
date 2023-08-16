@@ -39,7 +39,7 @@ public class Register {
                 System.out.println("Choose a valid alternative");
         }
 
-        System.out.println("Wanna return to register?");
+        System.out.println("Wanna return to register? [1 - Yes | 2 - No]");
         int continuar = keyboard.nextInt();
 
         if(continuar==1){
