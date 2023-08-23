@@ -1,6 +1,5 @@
 package br.senai.sp.game.Model;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Register {
@@ -62,7 +61,7 @@ public class Register {
         output.Printenemy(enemy);
     }
 
-    public void PlayerRegister(){
+    public Player PlayerRegister(){
 
         System.out.println("---------- Player Register ----------");
         System.out.print("What's your name: ");
@@ -73,10 +72,13 @@ public class Register {
 
         if (validaPrint != 1) {
             output.Printplayer(player);
+
+            return player;
         }
+        return null;
     }
 
-    public void EnemyRegister(){
+    public Enemy EnemyRegister(){
 
         System.out.println("---------- Enemy Register ----------");
         System.out.print("What's your name: ");
@@ -87,6 +89,9 @@ public class Register {
 
         if(validaPrint != 1) {
             output.Printenemy(enemy);
+
+            return enemy;
         }
+        return null;
     }
 }
