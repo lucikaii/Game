@@ -9,13 +9,13 @@ public class Scenario {
         switch (optionScenario){
 
             case 1:
-                scenario = "Torre Eiffel";
+                scenario = "Hospital Abandonado de Jandira";
                 break;
             case 2:
                 scenario =  "Praça de Eventos de Jandira";
                 break;
             case 3:
-                scenario = "N Tower";
+                scenario = "Tablado de Jandira";
                 break;
         }
 

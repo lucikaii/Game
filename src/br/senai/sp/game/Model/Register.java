@@ -12,7 +12,7 @@ public class Register {
     String answer;
     Scanner keyboard = new Scanner(System.in);
 
-    public void Choice(){
+    public void Choice() {
 
 
         String registerchoice;
@@ -20,7 +20,7 @@ public class Register {
         System.out.println("1- both | 2- player | 3- enemy");
         registerchoice = keyboard.next();
 
-        switch (registerchoice){
+        switch (registerchoice) {
 
             case "player":
                 PlayerRegister();
@@ -30,7 +30,7 @@ public class Register {
                 EnemyRegister();
                 break;
 
-            case  "both":
+            case "both":
                 BothRegister();
                 break;
 
@@ -41,18 +41,19 @@ public class Register {
         System.out.println("Wanna return to register? [1 - Yes | 2 - No]");
         int continuar = keyboard.nextInt();
 
-        if(continuar==1){
+        if (continuar == 1) {
             Choice();
         }
     }
 
 
-
-    /** Instanciando*/
+    /**
+     * Instanciando
+     */
 
     Output output = new Output();
 
-    public void BothRegister(){
+    public void BothRegister() {
 
         validaPrint = 1;
         PlayerRegister();
@@ -61,7 +62,7 @@ public class Register {
         output.Printenemy(enemy);
     }
 
-    public Player PlayerRegister(){
+    public Player PlayerRegister() {
 
         System.out.println("---------- Player Register ----------");
         System.out.print("What's your name: ");
@@ -73,12 +74,11 @@ public class Register {
         if (validaPrint != 1) {
             output.Printplayer(player);
 
-            return player;
         }
-        return null;
+        return player;
     }
 
-    public Enemy EnemyRegister(){
+    public Enemy EnemyRegister() {
 
         System.out.println("---------- Enemy Register ----------");
         System.out.print("What's your name: ");
@@ -87,11 +87,12 @@ public class Register {
         enemy.skin = keyboard.next();
         System.out.println("---------- Sucessfull Register ----------");
 
-        if(validaPrint != 1) {
+        if (validaPrint != 1) {
             output.Printenemy(enemy);
 
-            return enemy;
         }
-        return null;
+        return enemy;
+
     }
+
 }

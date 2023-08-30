@@ -33,7 +33,6 @@ public class Menu {
                 case 2:
                    battle.ChoiceScenario();
                    battle.Battle(register.player, register.enemy);
-                    System.out.println("COMING SOON: FEATURE IN DEVELOPMENT");
                 case 3:
                     continuar = false;
                     break;
