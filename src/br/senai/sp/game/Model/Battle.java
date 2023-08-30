@@ -38,39 +38,50 @@ public class Battle {
             }
 
             System.out.println("-------------------------- BATTLE -----------------------------");
-            System.out.println(" Player Attack [E]" + player.name);
-            System.out.println("Enemy Attack [M]");
+            System.out.println(" Player Attack [E]" + player.name + " Life: " + lifePlayer );
+            System.out.println("Enemy Attack [M]" + enemy.name + " Life: " + lifeEnemy);
             System.out.println("---------------------------------------------------------------");
 
             String attack = keyboard.next();
 
             if (attack.equalsIgnoreCase("E")) {
 
-                System.out.println("-------------------");
-                System.out.println("  PLAYER ATTACKED  ");
-
-
                 int danoPlayer = (int) (Math.random() * 20) + 1;
 
                 enemy.SubtractLife(danoPlayer);
 
-                System.out.println("Attack: " + danoPlayer);
-                System.out.println("-------------------");
-
                 int defEnemy = (int) (Math.random() * 20) + 1;
-                int danoReal = defEnemy - danoPlayer;
+                int danoReal = danoPlayer - defEnemy;
+
+                if (danoReal < 0 ){
+                    danoReal = 0;
+                }
+
+                enemy.SubtractLife(danoReal);
+
+                System.out.println("-------------------");
+                System.out.println("  PLAYER ATTACKED  ");
+                System.out.println("Attack: " + danoPlayer);
+                System.out.println("Defense: " + defEnemy);
+                System.out.println("-------------------");
 
             } else if (attack.equalsIgnoreCase("M")) {
 
+                int danoEnemy = (int) (Math.random() * 20) + 1;
+                int defPlayer = (int) (Math.random() * 20) + 1;
+
+                int danoReal = danoEnemy - defPlayer;
+
+                if (danoReal < 0){
+                    danoReal = 0;
+                }
+
+                player.SubtractLife(danoReal);
+
                 System.out.println("-------------------");
                 System.out.println("  ENEMY ATTACKED  ");
-
-
-                int danoEnemy = (int) (Math.random() * 20) + 1;
-
-                player.SubtractLife(danoEnemy);
-
                 System.out.println("Attack: " + danoEnemy);
+                System.out.println("Defense: " + defPlayer);
                 System.out.println("-------------------");
 
             } else {
